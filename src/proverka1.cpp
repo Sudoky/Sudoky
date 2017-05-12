@@ -41,6 +41,95 @@ int prov(int j, int i){
 	cout<<"стoлбец "<<k<<endl;}
 	}
 	if (s>0) return 4;
-	else return 15;
+	else {switch(j){ 
+		case 0:case 1:case 2: {
+		switch (i){
+			case 0:case 1:case 2:{ 
+				for (m=0;m<3;m++)
+				for (k=0;k<3;k++){
+					if ((proverka[m][k]==proverka[j][i])&&(j!=m)&&(i!=k)) s++;	
+				}	
+				break;
+			}
+			case 3:case 4:case 5:{ 
+				for (m=0;m<3;m++)
+				for (k=3;k<6;k++){
+					if ((proverka[m][k]==proverka[j][i])&&(j!=m)&&(i!=k)) s++;	
+				}	
+				break;
+			}
+			case 6:case 7:case 8:{ 
+				for (m=0;m<3;m++)
+				for (k=6;k<9;k++){
+					if ((proverka[m][k]==proverka[j][i])&&(j!=m)&&(i!=k)) s++;	
+				}	
+				break;
+			}
+		} break;
+
+		}
+		case 3:case 4:case 5: {
+		switch (i){
+			case 0:case 1:case 2:{ 
+				for (m=3;m<6;m++)
+				for (k=0;k<3;k++){
+					if ((proverka[m][k]==proverka[j][i])&&(j!=m)&&(i!=k)) s++;	
+				}	
+				break;
+			}
+			case 3:case 4:case 5:{ 
+				for (m=3;m<6;m++)
+				for (k=3;k<6;k++){
+					if ((proverka[m][k]==proverka[j][i])&&(j!=m)&&(i!=k)) s++;	
+				}	
+				break;
+			}
+			case 6:case 7:case 8:{ 
+				for (m=3;m<6;m++)
+				for (k=6;k<9;k++){
+					if ((proverka[m][k]==proverka[j][i])&&(j!=m)&&(i!=k)) s++;	
+				}	
+				break;
+			}
+		} break;
+	
+		}
+		case 6:case 7:case 8: {
+		switch (i){
+			case 0:case 1:case 2:{ 
+				for (m=6;m<9;m++)
+				for (k=0;k<3;k++){
+					if ((proverka[m][k]==proverka[j][i])&&(j!=m)&&(i!=k)) {
+					s++;
+					cout<<"столбец "<<m<<endl<<"строка "<<k<<endl;}	
+				}	
+				break;
+			}
+			case 3:case 4:case 5:{ 
+				for (m=6;m<9;m++)
+				for (k=3;k<6;k++){
+					if ((proverka[m][k]==proverka[j][i])&&(j!=m)&&(i!=k))  {
+					s++;
+					cout<<"столбец "<<m<<endl<<"строка "<<k<<endl;}		
+				}	
+				break;
+			}
+			case 6:case 7:case 8:{ 
+				for (m=6;m<9;m++)
+				for (k=6;k<9;k++){
+					if ((proverka[m][k]==proverka[j][i])&&(j!=m)&&(i!=k)){
+					s++;
+					cout<<"столбец "<<m<<endl<<"строка "<<k<<endl;}	
+				}	
+				break;
+			}
+		} break;
+		}
+		break;
+	
+	}
+	}
+	if (s>0) return 4;
+	else return 15;	
 }
 	
