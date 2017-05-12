@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <iostream>
 using namespace std;
-void workfile(int n);
+int workfile(int n);
 char zadanie[9][10], otvet[9][10], proverka[9][10];
 int main(){
 	int vhod;
@@ -13,9 +13,9 @@ int main(){
 	system("PAUSE");
 	return 0;
 }
-void workfile(int n){
+int workfile(int n){
 	FILE *fz, *fo;
-	int i=0, j=0, a, k=0;
+	int i=0, j=0, t, a, k=0;
 	char st[100], comb[10], ch;
 	switch(n){
 		case 111:{
@@ -49,10 +49,6 @@ void workfile(int n){
 		zadanie[i][9]='\0';
 		otvet[i][9]='\0';
 	}
-	for(i=0;i<9;i++){
-		for (j=0;j<9;j++)
-		rehenie[i][j]='0';
-	}
 	i=0;
 	while(!feof(fz)){
 		fgets(st,100,fz);
@@ -62,6 +58,7 @@ void workfile(int n){
 			while(st[i]!='\0'){
 				if((st[i]!=' ')&&(st[i]!='\0')){
 					comb[j]=st[i];
+					if(st[i]=='0') t++;
 					i++;
 					j++;
 				}
@@ -97,4 +94,5 @@ void workfile(int n){
 	}
 	fclose(fz);
 	fclose(fo);
+	return t;
 }
