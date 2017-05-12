@@ -4,18 +4,19 @@
 #include <iostream>
 using namespace std;
 int workfile(int n);
-char zadanie[9][10], otvet[9][10], proverka[9][10];
+char task[9][10], reply[9][10], test[9][10];
 int main(){
-	int vhod;
-	cout<<"¬ведите сценарий"<<endl;
-	cin>>vhod;//заменить на вызов меню
-	if(vhod>3) workfile(vhod);
+	int vhod, t;
+	cout<<"Enter the scenario"<<endl;
+	cin>>vhod;//replace with menu
+	if(vhod>3) t=workfile(vhod);
+	cout<<t<<endl;
 	system("PAUSE");
 	return 0;
 }
 int workfile(int n){
 	FILE *fz, *fo;
-	int i=0, j=0, t, a, k=0;
+	int i=0, j=0, t=0, a, k=0;
 	char st[100], comb[10], ch;
 	switch(n){
 		case 111:{
@@ -45,9 +46,9 @@ int workfile(int n){
 		}
 	}
 	for(i=0;i<9;i++){
-		proverka[i][9]='\0';
-		zadanie[i][9]='\0';
-		otvet[i][9]='\0';
+		test[i][9]='\0';
+		task[i][9]='\0';
+		reply[i][9]='\0';
 	}
 	i=0;
 	while(!feof(fz)){
@@ -66,8 +67,8 @@ int workfile(int n){
 			}
 			i++;
 			comb[j]='\0';
-			strcpy (zadanie[k],comb);
-			strcpy (proverka[k],comb);
+			strcpy (task[k],comb);
+			strcpy (test[k],comb);
 			k++;
 		}	
 	}
@@ -88,7 +89,7 @@ int workfile(int n){
 			}
 			i++;
 			comb[j]='\0';
-			strcpy (otvet[k],comb); 
+			strcpy (reply[k],comb); 
 			k++;
 		}	
 	}
