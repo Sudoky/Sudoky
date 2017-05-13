@@ -79,6 +79,77 @@ int main()
           	}
 			while (ch!=13);
           	cleardevice();
+          				switch(n)
+		   	{
+				case 1: do 
+				{ 
+          			setcolor(2);
+          			for (i=1; i<=4; i++)
+					{
+           				switch(i)
+           				{
+							case 1: outtextxy (300,100+i*100," Easy"); break;
+               				case 2: outtextxy (300,100+i*100," Medium"); break;
+                			case 3: outtextxy (300,100+i*100," Hard"); break;
+                			case 4: outtextxy (300,100+i*100," Back in Menu"); break;
+                			default: break;
+            			}
+           			}
+            	 	setcolor(4);
+              		switch(n)
+           			{
+						case 1: outtextxy (300,100+n*100," Easy"); break;
+               			case 2: outtextxy (300,100+n*100," Medium"); break;
+               			case 3: outtextxy (300,100+n*100," Hard"); break;
+               			case 4: outtextxy (300,100+n*100," Back in Menu"); break;
+               			default: break;
+					}
+          			ch=getch();
+          			if (ch==72) n--;
+          			if (n<=0) n=4;
+       				if (ch==80) n++;
+       				if (n>4) n=1;
+       			}
+				while (ch!=13);
+          		cleardevice();
+          		switch(n) 
+       			{
+	  				case 1: return 111;
+	       			case 2: return 112;
+       				case 3: return 113;
+	 				break;
+		  		} 
+				n=1;
+		  		break;
+               	case 2: do 
+				{ 
+          			setcolor(2);
+         			for (i=1; i<=3; i++)
+					{
+           				switch(i)
+              			{
+							case 1: outtextxy (300,100+i*100," Hard"); break;
+               				case 2: outtextxy (300,100+i*100," Very Hard"); break;
+               				case 3: outtextxy (300,100+i*100," Back in Menu"); break;
+               				default: break;
+           				}
+            		}
+            		setcolor(4);
+              		switch(n)
+           			{
+						case 1: outtextxy (300,100+n*100," Hard"); break;
+                		case 2: outtextxy (300,100+n*100," Very Hard"); break;
+                		case 3: outtextxy (300,100+n*100," Back in Menu"); break;
+               			default: break;
+					} 
+					ch=getch();
+       				if (ch==72) n--;
+          			if (n<=0) n=3;
+          			if (ch==80) n++;
+          			if (n>3) ;
+          		} 
+				while (ch!=13);
+          		cleardevice();
     }   
 	system("PAUSE");
     return 0;
