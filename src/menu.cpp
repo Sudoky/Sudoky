@@ -16,6 +16,7 @@ int Menu()
 {
 	int n=1, i;
     char ch;
+    cout<<n;
     initwindow(1000,1000);
     while (1)
 	{ 
@@ -45,7 +46,7 @@ int Menu()
         	if (ch==72) n--;
         	if (n<=0) n=3;
         	if (ch==80) n++;
-        	if (n>3) ;
+        	if (n>3) n=1 ;
         } 
 		while (ch!=13);
         cleardevice();

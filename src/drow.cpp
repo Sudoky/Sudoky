@@ -4,7 +4,7 @@
 using namespace std; 
 void drowp();
 int main(){
-	initwindow(1000,1000); 
+	initwindow(900,900); 
 	drowp();
 	getch();
 	closegraph();
