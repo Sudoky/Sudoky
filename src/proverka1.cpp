@@ -19,12 +19,6 @@ int main(){
 }
 cout<<endl;
 }
-	z=prov( 0, 0);
-	cout<<z;
-	system("PAUSE"); 
-	return 0; 
-}
-
 int prov(int j, int i){ 
 	int k,s=0,m;
 	for(k=0;k<9;k++){
@@ -132,4 +126,4 @@ int prov(int j, int i){
 	if (s>0) return 4;
 	else return 15;	
 }
-	
+
