@@ -1,15 +1,17 @@
 #include <stdlib.h> 
 #include <stdio.h> 
-//#include <graphics.h> 
+#include <graphics.h> 
 #include <ctime>
 #include <iostream>
 #include <windows.h> 
 using namespace std; 
 int prov(int j, int i);
+void global();
 int proverka[9][9];
 int main(){
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
+	initwindow(1000,1000);
 	srand(time(0));
 	int x,y,z;
 	for (x=0;x<9;x++){
@@ -19,6 +21,16 @@ int main(){
 }
 cout<<endl;
 }
+
+	global();
+	delay(1000);
+	getch();
+	cout<<z;
+	system("PAUSE"); 
+	return 0; 
+}
+
+
 int prov(int j, int i){ 
 	int k,s=0,m;
 	for(k=0;k<9;k++){
@@ -126,4 +138,17 @@ int prov(int j, int i){
 	if (s>0) return 4;
 	else return 15;	
 }
+
+void global(){ int z,x,y;
+	for (x=0;x<9;x++){
+	if (z==4) {
+	outtextxy ( 200, 400,"You loser!!!=)"); break;
+	}
+	for (y=0;y<9;y++){
+	z=prov(x,y);
+	if (z==4) break;
+	if ((z!=4)&&(x==8)&&(y==8)) outtextxy ( 250, 400,"You Win!!!");
+	}
+	}
+}		
 
