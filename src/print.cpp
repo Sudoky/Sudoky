@@ -1,18 +1,65 @@
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> 
 #include <iostream>
-using namespace std;
+#include <stdio.h> 
+#include <graphics.h>
+#include <string.h>
+using namespace std; 
+void drowp();
 int workfile(int n);
-char task[9][10], reply[9][10], test[9][10];
+void printz();
+void printr();
+char task[9][10], reply[9][10], decision[9][9], test[9][10];
 int main(){
-	int vhod, t;
+	int vhod, t=0;
 	cout<<"Enter the scenario"<<endl;
 	cin>>vhod;//replace with menu
-	if(vhod>3) t=workfile(vhod);
-	cout<<t<<endl;
+	if (vhod>3) t=workfile(vhod);
+	else {
+		//closegraph();
+		system("PAUSE");
+		return 0;
+	}
+	initwindow(1000,1000);
+	cleardevice();
+	drowp();
+	printr();
+	printz();
+	delay(1000);
+	closegraph();
 	system("PAUSE");
 	return 0;
+}
+
+void printz(){
+	int i, j;
+	char ch[2];
+	settextstyle(6,0,7);
+	for (i=0;i<9;i++){
+		for(j=0;j<9;j++){
+			setcolor(CYAN);
+			if (task[i][j]>'0'){
+				ch[0]=task[i][j];
+				ch[1]='\0';
+				outtextxy ( 75+i*100, 65+j*100, ch );
+			}
+		}
+	}
+}
+
+void printr(){
+	int i, j;
+	char ch[2];
+	settextstyle(6,0,7);
+	for (i=0;i<9;i++){
+		for(j=0;j<9;j++){
+			setcolor(WHITE);
+			if (decision[i][j]>'0'){
+				ch[0]=decision[i][j];
+				ch[1]='\0';
+				outtextxy ( 75+i*100, 65+j*100, ch );
+			}
+		}
+	}
 }
 int workfile(int n){
 	FILE *fz, *fo;
@@ -49,6 +96,10 @@ int workfile(int n){
 		test[i][9]='\0';
 		task[i][9]='\0';
 		reply[i][9]='\0';
+	}
+	for(i=0;i<9;i++){
+		for (j=0;j<9;j++)
+		decision[i][j]='0';
 	}
 	i=0;
 	while(!feof(fz)){
@@ -96,4 +147,24 @@ int workfile(int n){
 	fclose(fz);
 	fclose(fo);
 	return t;
+}
+
+void drowp(){
+	int i, x=50, y=50; 
+	setlinestyle (1, 1, 4);
+	for(i=50;i<=950;i=i+300){
+		moveto(x,i); lineto(950,i);
+		moveto(i,x); lineto(i,950);
+	}
+	for(i=50;i<=950;i=i+300){
+		moveto(x,i); lineto(950,i);
+		moveto(i,x); lineto(i,950);
+	}
+	setlinestyle (1, 1, 1);
+	for(i=150;i<=850;i=i+100){
+		if((i!=350)&&(i!=650)){
+			moveto(x,i); lineto(950,i);
+			moveto(i,x); lineto(i,950);
+		}
+	}	
 }
