@@ -541,7 +541,7 @@ int prov(int j, int i){
 	else return 15;	
 }
 int provdiag (int i, int j){
-	int k,s=0,a;
+	int k,s=0,a=0;
 	if ((i==j)&&(i!=4)&&(j!=4)) a=1;
 	if (((8-i)==j)&&(i!=4)&&(j!=4)) a=2;
 	if ((i==4)&&(j==4)) a=3;
