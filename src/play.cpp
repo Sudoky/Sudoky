@@ -5,16 +5,19 @@
 #include <string.h>
 using namespace std; 
 void drowp();
+void drowdiag();
 int workfile(int n);
 void printz();
 int Menu();
 void printr();
 void play();
 int prov(int j, int i);
+int provdiag (int i, int j);
 void global();
 char task[9][10], reply[9][10], decision[9][9], test[9][10];
+int vhod;
 int main(){
-	int vhod, t=0;
+	int t=0;
 	vhod=Menu();
 	if (vhod>3) t=workfile(vhod);
 	else {
@@ -237,6 +240,7 @@ void play(){
 	s[1]='\0';
 	while (1){
 	cleardevice();
+	if((vhod==121)||(vhod==122)) drowdiag();
 	drowp();
 	printr();
 	printz();
@@ -254,6 +258,7 @@ void play(){
 			if (task[x][y]=='0') {
 				test[x][y]=ch;
 				if (ch>48) p=prov(x,y);
+				if ((ch>48)&&(p!=4)&&((vhod==121)||(vhod==122))) p=provdiag(x,y);
 				setcolor(p);
 				if ((p==4)&&(ch!='0')){ 
 				s[0]=ch;
@@ -424,6 +429,13 @@ void drowp(){
 		}
 	}	
 }
+void drowdiag(){
+	int i, x=50, y=50; 
+	setcolor(4);
+	setlinestyle (1, 1, 4);
+	moveto(10,10); lineto(640,640);
+	moveto(10,640); lineto(640,10);	
+}
 int prov(int j, int i){ 
 	int k,s=0,m;
 	for(k=0;k<9;k++){
@@ -528,16 +540,48 @@ int prov(int j, int i){
 	if (s>0) return 4;
 	else return 15;	
 }
-
+int provdiag (int i, int j){
+	int k,s=0,a;
+	if ((i==j)&&(i!=4)&&(j!=4)) a=1;
+	if (((8-i)==j)&&(i!=4)&&(j!=4)) a=2;
+	if ((i==4)&&(j==4)) a=3;
+	switch (a){
+		case 1:{
+			for(k=0;k<9;k++){
+				if ((test[k][k]==test[i][j])&&(i!=k)&&(j!=k))s++;
+				if (s>0) break;
+			}
+			break;
+		}
+		case 2:{
+			for(k=0;k<9;k++){
+				if ((test[8-k][k]==test[i][j])&&(i!=k)&&(j!=k))s++;
+				if (s>0) break;
+			}
+			break;
+		}
+		case 3:{
+			for(k=0;k<9;k++){
+				if ((test[k][k]==test[i][j])&&(i!=k)&&(j!=k))s++;
+				if (s>0) break;
+				if ((test[8-k][k]==test[i][j])&&(i!=k)&&(j!=k))s++;
+				if (s>0) break;
+			}
+			break;
+		}
+	}
+	if (s>0) return 4;
+	else return 15;
+}
 void global(){ int z,x,y;
 	for (x=0;x<9;x++){
 	if (z==4) {
-	outtextxy ( 200, 400,"You loser!!!=)"); break;
+	outtextxy ( 150, 300,"You loser!!!=)"); break;
 	}
 	for (y=0;y<9;y++){
 	z=prov(x,y);
 	if (z==4) break;
-	if ((z!=4)&&(x==8)&&(y==8)) outtextxy ( 250, 400,"You Win!!!");
+	if ((z!=4)&&(x==8)&&(y==8)) outtextxy ( 175, 300,"You Win!!!");
 	}
 	}
 }
