@@ -22,7 +22,7 @@ int main(){
 		system("PAUSE");
 		return 0;
 	}
-	initwindow(1000,1000);
+	initwindow(660,660);
 	play();
 	getch();
 	closegraph();
@@ -41,7 +41,7 @@ void play(){
 	printz();
 	setcolor(GREEN);
 	setlinestyle (1, 1, 4);
-	rectangle (55+x*100, 55+y*100, 145+x*100, 145+y*100);
+	rectangle (15+x*70, 15+y*70, 75+x*70, 75+y*70);
 	while (1){
 		if(kbhit()) ch=getch();
 		if (ch==77) x++;
@@ -56,7 +56,8 @@ void play(){
 				setcolor(p);
 				if ((p==4)&&(ch!='0')){ 
 				s[0]=ch;
-				outtextxy ( 75+x*100, 65+y*100,s);
+				settextstyle(6,0,5);
+				outtextxy ( 30+x*70, 20+y*70,s);
 				ch=0;
 				p=0;
 				}
@@ -86,14 +87,14 @@ void play(){
 void printz(){
 	int i, j;
 	char ch[2];
-	settextstyle(6,0,7);
+	settextstyle(6,0,5);
 	for (i=0;i<9;i++){
 		for(j=0;j<9;j++){
 			setcolor(CYAN);
 			if (task[i][j]>'0'){
 				ch[0]=task[i][j];
 				ch[1]='\0';
-				outtextxy ( 75+i*100, 65+j*100, ch );
+				outtextxy ( 30+i*70, 20+j*70, ch );
 			}
 		}
 	}
@@ -102,14 +103,14 @@ void printz(){
 void printr(){
 	int i, j;
 	char ch[2];
-	settextstyle(6,0,7);
+	settextstyle(6,0,5);
 	for (i=0;i<9;i++){
 		for(j=0;j<9;j++){
 			setcolor(WHITE);
 			if (decision[i][j]>'0'){
 				ch[0]=decision[i][j];
 				ch[1]='\0';
-				outtextxy ( 75+i*100, 65+j*100, ch );
+				outtextxy ( 30+i*70, 20+j*70, ch );
 			}
 		}
 	}
@@ -203,22 +204,22 @@ int workfile(int n){
 }
 
 void drowp(){
-	int i, x=50, y=50; 
+	int i, x=10, y=10; 
 	setcolor(WHITE);
 	setlinestyle (1, 1, 4);
-	for(i=50;i<=950;i=i+300){
-		moveto(x,i); lineto(950,i);
-		moveto(i,x); lineto(i,950);
+	for(i=10;i<=640;i=i+210){
+		moveto(x,i); lineto(640,i);
+		moveto(i,x); lineto(i,640);
 	}
-	for(i=50;i<=950;i=i+300){
-		moveto(x,i); lineto(950,i);
-		moveto(i,x); lineto(i,950);
+	for(i=10;i<=640;i=i+210){
+		moveto(x,i); lineto(640,i);
+		moveto(i,x); lineto(i,640);
 	}
 	setlinestyle (1, 1, 1);
-	for(i=150;i<=850;i=i+100){
-		if((i!=350)&&(i!=650)){
-			moveto(x,i); lineto(950,i);
-			moveto(i,x); lineto(i,950);
+	for(i=80;i<=570;i=i+70){
+		if((i!=220)&&(i!=430)){
+			moveto(x,i); lineto(640,i);
+			moveto(i,x); lineto(i,640);
 		}
 	}	
 }
