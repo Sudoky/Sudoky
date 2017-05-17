@@ -1,28 +1,30 @@
+#include "sudoky.h"
+extern char task[9][10], reply[9][10], decision[9][9], test[9][10];
 int provdiag (int i, int j){
-	int k,s=0,a;
+	int k,s=0,a=0;
 	if ((i==j)&&(i!=4)&&(j!=4)) a=1;
 	if (((8-i)==j)&&(i!=4)&&(j!=4)) a=2;
 	if ((i==4)&&(j==4)) a=3;
 	switch (a){
 		case 1:{
 			for(k=0;k<9;k++){
-				if ((proverka[k][k]==proverka[i][j])&&(i!=k)&&(j!=k))s++;
+				if ((test[k][k]==test[i][j])&&(i!=k)&&(j!=k))s++;
 				if (s>0) break;
 			}
 			break;
 		}
 		case 2:{
 			for(k=0;k<9;k++){
-				if ((proverka[8-k][k]==proverka[i][j])&&(i!=k)&&(j!=k))s++;
+				if ((test[8-k][k]==test[i][j])&&(i!=k)&&(j!=k))s++;
 				if (s>0) break;
 			}
 			break;
 		}
 		case 3:{
 			for(k=0;k<9;k++){
-				if ((proverka[k][k]==proverka[i][j])&&(i!=k)&&(j!=k))s++;
+				if ((test[k][k]==test[i][j])&&(i!=k)&&(j!=k))s++;
 				if (s>0) break;
-				if ((proverka[8-k][k]==proverka[i][j])&&(i!=k)&&(j!=k))s++;
+				if ((test[8-k][k]==test[i][j])&&(i!=k)&&(j!=k))s++;
 				if (s>0) break;
 			}
 			break;
