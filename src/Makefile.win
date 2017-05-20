@@ -1,0 +1,52 @@
+# Project: Sudoky
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = drow.o main.o menu.o play.o print.o provdiag.o proverka1.o workfile.o check.o
+LINKOBJ  = drow.o main.o menu.o play.o print.o provdiag.o proverka1.o workfile.o check.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32 -m32
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Sudoky.exe
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+drow.o: drow.cpp
+	$(CPP) -c drow.cpp -o drow.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+menu.o: menu.cpp
+	$(CPP) -c menu.cpp -o menu.o $(CXXFLAGS)
+
+play.o: play.cpp
+	$(CPP) -c play.cpp -o play.o $(CXXFLAGS)
+
+print.o: print.cpp
+	$(CPP) -c print.cpp -o print.o $(CXXFLAGS)
+
+provdiag.o: provdiag.cpp
+	$(CPP) -c provdiag.cpp -o provdiag.o $(CXXFLAGS)
+
+proverka1.o: proverka1.cpp
+	$(CPP) -c proverka1.cpp -o proverka1.o $(CXXFLAGS)
+
+workfile.o: workfile.cpp
+	$(CPP) -c workfile.cpp -o workfile.o $(CXXFLAGS)
+
+check.o: check.cpp
+	$(CPP) -c check.cpp -o check.o $(CXXFLAGS)
