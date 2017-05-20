@@ -15,3 +15,4 @@ void play();
 int prov(int j, int i);
 int provdiag (int i, int j);
 void global();
+void check();
