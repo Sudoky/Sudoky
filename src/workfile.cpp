@@ -1,19 +1,6 @@
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
-using namespace std;
-int workfile(int n);
-char task[9][10], reply[9][10], decision[9][9], test[9][10];
-int main(){
-	int vhod, t;
-	cout<<"Enter the scenario"<<endl;
-	cin>>vhod;//replace with menu
-	if(vhod>3) t=workfile(vhod);
-	cout<<t<<endl;
-	system("PAUSE");
-	return 0;
-}
+#include "sudoky.h"
+extern char task[9][10], reply[9][10], decision[9][9], test[9][10];
+
 int workfile(int n){
 	FILE *fz, *fo;
 	int i=0, j=0, t=0, a, k=0;
