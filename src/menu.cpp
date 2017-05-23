@@ -11,7 +11,7 @@ int Menu()
         	setcolor(2);
         	for (i=1; i<=4; i++)
 		  	{
-            	settextstyle(GOTHIC_FONT, HORIZ_DIR, 6);
+            	settextstyle(GOTHIC_FONT, HORIZ_DIR, 5);
             	switch(i)
             	{
 					case 1: outtextxy (100,50+i*100," Play"); break;
