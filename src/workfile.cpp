@@ -1,5 +1,5 @@
 #include "sudoky.h"
-extern char task[9][10], reply[9][10], decision[9][9], test[9][10];
+char task[9][10], decision[9][9], test[9][10];
 
 int workfile(int n){
 	FILE *fz, *fo;
@@ -35,7 +35,6 @@ int workfile(int n){
 	for(i=0;i<9;i++){
 		test[i][9]='\0';
 		task[i][9]='\0';
-		reply[i][9]='\0';
 	}
 	for(i=0;i<9;i++){
 		for (j=0;j<9;j++)
@@ -63,28 +62,7 @@ int workfile(int n){
 			k++;
 		}	
 	}
-	i=0;
-	k=0;
-	while(!feof(fo)){
-		fgets(st,100,fo);
-		a=strlen(st);
-		while (i<a){
-			j=0;
-			while(st[i]!='\0'){
-				if((st[i]!=' ')&&(st[i]!='\0')){
-					comb[j]=st[i];
-					i++;
-					j++;
-				}
-				else break;
-			}
-			i++;
-			comb[j]='\0';
-			strcpy (reply[k],comb); 
-			k++;
-		}	
-	}
 	fclose(fz);
-	fclose(fo);
+    fclose(fo);
 	return t;
 }
