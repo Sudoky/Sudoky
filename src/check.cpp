@@ -41,7 +41,7 @@ void check()
 						if (task[x][y]=='0') 
 						{
 							test[x][y]=ch;
-							if (ch>48) p=prov(x,y);
+							if (ch>48) p=prov(x,y,test);
 							setcolor(p);
 							if ((p==4)&&(ch!='0'))
 							{ 
@@ -68,7 +68,7 @@ void check()
 				if (t==0)
 				{
 					cleardevice();
-					global();
+					global(test);
 					break;
 				}
 				if (ch==27) break;
@@ -111,7 +111,7 @@ void check()
 				}
 			}
 			fclose(f);
-			global();
+			global(test);
 			break;
 		}
 	}	
