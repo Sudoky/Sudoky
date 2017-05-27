@@ -2,12 +2,14 @@
 char task[9][10], reply[9][10], decision[9][9], test[9][10];
 int vhod;
 void check();
-int main(){
+int main()
+{
 	int t=0;
 	vhod=Menu();
 	 
 	if ((vhod>3)&&(vhod!=21)&&(vhod!=22)) t=workfile(vhod);
-	if (vhod<=3) {
+	if (vhod<=3) 
+	{
 		closegraph();
 		system("PAUSE");
 		return 0;

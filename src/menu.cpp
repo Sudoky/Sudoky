@@ -234,7 +234,7 @@ int Menu()
           		cleardevice();
           		switch(n) 
        			{
-	  				case 1: do
+	  			case 1: do
 				{
 					setcolor(1);
         			settextstyle(GOTHIC_FONT, HORIZ_DIR, 1);
@@ -348,9 +348,9 @@ int Menu()
 				while (ch!=13);
           		cleardevice();;
 	 			break;
-		  		} 
-				n=1;
-		  		break;
+		  	} 
+			n=1;
+		  	break;
 		}
 	}
     system("PAUSE");
