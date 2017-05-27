@@ -30,8 +30,8 @@ void play()
 				if (task[x][y]=='0') 
 				{
 					test[x][y]=ch;
-					if (ch>48) p=prov(x,y);
-					if ((ch>48)&&(p!=4)&&((vhod==121)||(vhod==122))) p=provdiag(x,y);
+					if (ch>48) p=prov(x,y,test);
+					if ((ch>48)&&(p!=4)&&((vhod==121)||(vhod==122))) p=provdiag(x,y,test);
 					setcolor(p);
 					if ((p==4)&&(ch!='0'))
 					{ 
@@ -58,7 +58,7 @@ void play()
 		if (t==0)
 		{
 			cleardevice();
-			global();
+			global(test);
 			break;
 		}
 		if (ch==27) break;

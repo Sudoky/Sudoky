@@ -1,7 +1,7 @@
 #include "sudoky.h"
 extern char task[9][10], reply[9][10], decision[9][9], test[9][10];
 extern int vhod;
-int prov(int j, int i)
+int prov(int j, int i, char test[9][10])
 { 
 	int k,s=0,m;
 	for(k=0;k<9;k++)
@@ -131,7 +131,7 @@ int prov(int j, int i)
 		else return 15;	
 	}
 }
-void global()
+void global(char test[9][10])
 { 
 	int z,x,y;
 	for (x=0;x<9;x++)
@@ -142,7 +142,7 @@ void global()
 		}
 		for (y=0;y<9;y++)
 		{
-			z=prov(x,y);
+			z=prov(x,y,test);
 			if (z==4) break;
 			if ((z!=4)&&(x==8)&&(y==8)) outtextxy ( 230, 250,"WIN");
 		}
