@@ -1,5 +1,0 @@
-.gitignore.txt
-*.exe
-*.o
-*.layout
-*.win
