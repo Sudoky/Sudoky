@@ -1,4 +1,5 @@
 #include "sudoky.h"
+#include <graphics.h>
 extern char task[9][10], decision[9][9], test[9][10];
 int workfile(int n)
 {
@@ -19,8 +20,8 @@ int workfile(int n)
 		}
 		case 113:
 		{
-			fz=fopen("113z.txt","r");
-			break;
+   			fz=fopen("113z.txt","r");
+        	break;
 		}
 		case 121:
 		{
@@ -33,6 +34,13 @@ int workfile(int n)
 			break;
 		}
 	}
+    if (fz==NULL)
+    {
+        closegraph();
+        cout<<"The file isn`t found or isn`t open"<<endl;
+        system("PAUSE");
+        return 1;
+    }
 	for(i=0;i<9;i++)
 	{
 		test[i][9]='\0';
