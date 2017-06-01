@@ -1,5 +1,5 @@
 #include "sudoky.h"
-extern char task[9][10], reply[9][10], decision[9][9], test[9][10];
+extern char task[9][10], decision[9][9], test[9][10];
 int provdiag (int i, int j,char test[9][10]){
 	int k,s=0,a=0;
 	if ((i==j)&&(i!=4)&&(j!=4)) a=1;
