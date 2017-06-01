@@ -2,7 +2,6 @@
 #include <graphics.h>
 char task[9][10], decision[9][9], test[9][10];
 int vhod;
-void check();
 int main()
 {
 	int t=0;

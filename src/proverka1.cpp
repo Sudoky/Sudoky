@@ -1,6 +1,4 @@
 #include "sudoky.h"
-extern char task[9][10], decision[9][9], test[9][10];
-extern int vhod;
 int prov(int j, int i, char test[9][10])
 { 
 	int k,s=0,m;
