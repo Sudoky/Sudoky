@@ -1,4 +1,5 @@
 #include "sudoky.h"
+#include <graphics.h>
 extern int vhod;
 void global(char test[9][10])
 { 
