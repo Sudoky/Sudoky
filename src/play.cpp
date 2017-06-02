@@ -1,5 +1,6 @@
 #include "sudoky.h"
-extern char task[9][10], reply[9][10], decision[9][9], test[9][10];
+#include <graphics.h>
+extern char task[9][10], decision[9][9], test[9][10];
 extern int vhod;
 
 void play()

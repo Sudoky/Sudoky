@@ -137,7 +137,7 @@ void assert_data(const unsigned char* exp, size_t expsize,
     assert_data(exp, expsize, real, realsize, __FILE__, __LINE__)
 
 void assert_equal(intmax_t exp, intmax_t real, const char* caller, int line);
-#define ASSERT_EQUAL(exp, real) assert_equal(exp, real, __FILE__, __LINE__)
+#define ASSERT_EQUAL(exp, real); assert_equal(exp, real, __FILE__, __LINE__)
 
 void assert_equal_u(uintmax_t exp, uintmax_t real, const char* caller, int line);
 #define ASSERT_EQUAL_U(exp, real) assert_equal_u(exp, real, __FILE__, __LINE__)

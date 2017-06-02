@@ -1,4 +1,5 @@
 #include "sudoky.h"
+#include <graphics.h>
 int Menu()
 {
 	int n=1, i;

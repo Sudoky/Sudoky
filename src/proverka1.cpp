@@ -1,6 +1,4 @@
 #include "sudoky.h"
-extern char task[9][10], reply[9][10], decision[9][9], test[9][10];
-extern int vhod;
 int prov(int j, int i, char test[9][10])
 { 
 	int k,s=0,m;
@@ -131,20 +129,3 @@ int prov(int j, int i, char test[9][10])
 		else return 15;	
 	}
 }
-void global(char test[9][10])
-{ 
-	int z,x,y;
-	for (x=0;x<9;x++)
-	{
-		if ((z==4)&&((vhod==21)||(vhod==22))) 
-		{
-			outtextxy ( 120, 250,"WRONDLY"); break;
-		}
-		for (y=0;y<9;y++)
-		{
-			z=prov(x,y,test);
-			if (z==4) break;
-			if ((z!=4)&&(x==8)&&(y==8)) outtextxy ( 230, 250,"WIN");
-		}
-	}
-}		

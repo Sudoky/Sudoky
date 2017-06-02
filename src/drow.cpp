@@ -1,4 +1,5 @@
 #include "sudoky.h"
+#include <graphics.h>
 void drowp()
 {
 	int i, x=10, y=10; 
