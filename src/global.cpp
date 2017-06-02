@@ -6,7 +6,7 @@ void global(char test[9][10])
 	int z,x,y;
 	for (x=0;x<9;x++)
 	{
-		if ((z==4)&&((vhod==21)||(vhod==22))) 
+		if (z==4) 
 		{
 			outtextxy ( 120, 250,"WRONDLY"); break;
 		}
