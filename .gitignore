@@ -1,0 +1,6 @@
+src/*.exe
+src/*.o
+src/*.win
+src/*.layout
+build/*.o
+bin/sudoky_test
